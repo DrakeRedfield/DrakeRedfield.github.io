@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Scada:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Scada', sans-serif;
+    --blue: #2FC4CD;
+}
+body{
+    background: #0d0123;
+    /* display: flex; */
+    width: 100vw;
+    height: 100vh;
+}
+section{
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+/* Background */
+.top-visual{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/* Top Content */
+.content{
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(12, 92, 117, 0.42) 0%, rgba(12, 92, 117, 0.315) 100%);
+    backdrop-filter: blur(2px);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+/* Text Top Content */
+.content .labels{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+.content .labels .name{
+    color: white;
+    font-size: 3rem;
+}
+.content .labels .role{
+    color: var(--blue);
+    font-size: 1.5rem;
+}
+/* Images Top Content */
+.content .images{
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+.bg-light{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 50%;
+    z-index: 0;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(84, 192, 216, 0.6) 0%, rgba(84, 192, 216, 0) 100%);;
+}
+.content .images .image-content{
+    width: 25%;
+    padding-top: calc(25% * 2);
+    position: absolute;
+    top: calc(50% - calc(12.5% * 2));
+    left: 37.5%;
+    border-radius: 15px;
+    transition: all 0.5s ease-in;
+}
+.image-content.image-left{
+    background: url('https://user-images.githubusercontent.com/83781782/118924696-113a3580-b903-11eb-8d1b-b3c72bb49400.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translate(-70%, -10%);
+    filter: blur(1px);
+    animation: fadeOut 0.5s,
+               slideImage 2s;
+    animation-delay: 0s,0.5s;
+}
+.image-content.image-center{
+    background: url('https://user-images.githubusercontent.com/83781782/120059542-e2fdd980-c017-11eb-85fe-6de59a529e85.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 2;
+    position: relative;
+    animation: fadeOut 1.5s,
+               slideImage 2s;
+    animation-delay: 0s,1.5s;
+}
+.image-content.image-right{
+    background: url('https://user-images.githubusercontent.com/83781782/119242214-b6325980-bb21-11eb-9cad-a332c31241cd.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translate(70%, -10%);
+    filter: blur(1px);
+    animation: fadeOut 1s,
+               slideImage 2s;
+    animation-delay: 0s, 1s;
+}
+.mameshiba{
+    z-index: 3;
+    width: 100%;
+    position: absolute;
+    bottom: -12.5%;
+    transform: rotate( -30deg );
+    animation: fadeOut 2s,
+               shaking 2s infinite;
+    animation-delay: 0s,3.5s;
+}
+.mameshiba img{
+    width: 100%;
+}
+@keyframes fadeOut{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+/* Animations */
+@keyframes slideImage {
+    0%{
+        left: 200%;
+        opacity: 0;
+    }
+    100%{
+        left: 37.5%;
+        opacity: 1;
+    }
+}
+@keyframes shaking {
+    0%{
+        transform: rotate( -30deg );
+    }
+    50%{
+        transform: rotate( 30deg );
+    }
+    100%{
+        transform: rotate( -30deg );
+    }
+}
