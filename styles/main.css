@@ -75,9 +75,9 @@ section{
 }
 .content .images .image-content{
     width: 25%;
-    padding-top: calc(25% * 2);
+    padding-top: 50%;
     position: absolute;
-    top: calc(50% - calc(12.5% * 2));
+    top: 25%;
     left: 37.5%;
     border-radius: 15px;
     transition: all 0.5s ease-in;
