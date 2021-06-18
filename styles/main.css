@@ -4,15 +4,19 @@
     padding: 0;
     font-family: 'Scada', sans-serif;
     --blue: #2FC4CD;
+    box-sizing: border-box;
+}
+.blue-text{
+    color: var(--blue);
 }
 body{
     background: #0d0123;
     /* display: flex; */
     width: 100vw;
     height: 100vh;
+    overflow-x: hidden;
 }
 section{
-    box-sizing: border-box;
     overflow-x: hidden;
 }
 /* Background */
@@ -29,7 +33,6 @@ section{
     height: 100vh;
     background: radial-gradient(50% 50% at 50% 50%, rgba(12, 92, 117, 0.42) 0%, rgba(12, 92, 117, 0.315) 100%);
     backdrop-filter: blur(2px);
-    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -129,6 +132,141 @@ section{
 .mameshiba img{
     width: 100%;
 }
+/* about Me */
+.about-me{
+    width: 100%;
+    height: 100vh;
+    background: #0D203F;
+    max-width: 100%;
+    padding: 15px 5%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.about-me .header{
+    color:white;
+    font-size: 2.5rem;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    padding: 20px 15px;
+    position: relative;
+}
+/* Hobbies */
+.hobbies{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
+    /* padding: 15px 40px; */
+}
+/* Cards Style */
+.card{
+    width: 25%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+.card.full-wd{
+    width: 100%;
+    margin: auto;
+}
+.card .card-header{
+    width: 100%;
+    text-align: center;
+    background: rgba(13, 32, 63, 0.5);
+    border: 5px solid #FFFFFF;
+    backdrop-filter: blur(2px);
+    border-radius: 40px 40px 0px 0px;
+    padding: 20px 15px;
+    font-size: 2rem;
+    color: white;
+}
+.card .card-header img{
+    width: 50%;
+}
+.card .card-content{
+    background: #FFFFFF;
+    border-radius: 0px 0px 40px 40px;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+}
+.card .card-content.topic-text{
+    color: #217B8E;
+    text-align: center;
+    font-size: 2rem;
+}
+/* Content bg animation */
+.bg-animations{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+.bg-animations > div{
+    position: absolute;
+    width: 30vw;
+    height: 30vw;
+    /* background: radial-gradient(50% 50% at 50% 50%, rgba(83, 169, 196, 0.55) 0%, rgba(120, 208, 235, 0) 100%); */
+    background: rgba(83, 169, 196, 1);
+    opacity: 0.3;
+}
+.figure-1{
+    border-radius: 65% 27% 25% 46% / 64% 22% 41% 33%;
+    top: 5px;
+    left: 10px;
+    -webkit-animation: rotate-scale-up 12s linear infinite both;
+    animation: rotate-scale-up 12s linear infinite both;
+}
+.figure-2{
+    border-radius: 18% 56% 25% 24% / 27% 48% 41% 61%;
+    top: 35%;
+    right: 10px;
+    -webkit-animation: rotate-scale-up 14s linear infinite both;
+    animation: rotate-scale-up 14s linear infinite both;
+}
+.figure-3{
+    border-radius: 23% 56% 25% 48% / 21% 24% 27% 100%;
+    bottom: 5px;
+    left: 35%;
+    -webkit-animation: rotate-scale-up 18s linear infinite both;
+    animation: rotate-scale-up 18s linear infinite both;
+}
+/* Animations */
+@-webkit-keyframes rotate-scale-up {
+    0% {
+      -webkit-transform: scale(1) rotateZ(0);
+              transform: scale(1) rotateZ(0);
+              opacity: 0.3;
+    }
+    50% {
+      -webkit-transform: scale(2) rotateZ(180deg);
+              transform: scale(2) rotateZ(180deg);
+              opacity: 0.6;
+    }
+    100% {
+      -webkit-transform: scale(1) rotateZ(360deg);
+              transform: scale(1) rotateZ(360deg);
+              opacity: 0.3;
+    }
+  }
+  @keyframes rotate-scale-up {
+    0% {
+      -webkit-transform: scale(1) rotateZ(0);
+              transform: scale(1) rotateZ(0);
+    }
+    50% {
+      -webkit-transform: scale(1.5) rotateZ(180deg);
+              transform: scale(1.5) rotateZ(180deg);
+    }
+    100% {
+      -webkit-transform: scale(1) rotateZ(360deg);
+              transform: scale(1) rotateZ(360deg);
+    }
+  }
 @keyframes fadeOut{
     0%{
         opacity: 1;
@@ -137,7 +275,6 @@ section{
         opacity: 0;
     }
 }
-/* Animations */
 @keyframes slideImage {
     0%{
         left: 200%;
@@ -162,6 +299,9 @@ section{
 
 /* Responsive Style */
 @media screen and (max-width: 850px) {
+    html{
+        font-size: 15px;
+    }
     .content{
         flex-direction: column;
     }
@@ -169,4 +309,37 @@ section{
         width: 100%;
         height: 50%;
     }
+    /* About me */
+    .about-me{
+        height: fit-content;
+        display: block;
+    }
+    /*Hobbies*/
+    .hobbies{
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+    }
+    .hobbies > .card{
+        width: 48%;
+        margin-bottom: 10%;
+    }
+}
+@media screen and (max-width: 650px){
+    /* Set Font Size */
+    html{
+        font-size: 13px;
+    }
+    /* Set Size Cards */
+    .hobbies > .card{
+        width: 100%;
+    }
+    .card.full-wd .card-content{
+        text-align: center;
+    }
+    /* figure animated */
+    .bg-animations > div{
+        width: 50vw;
+        height: 50vw;
+    }
+    
 }
