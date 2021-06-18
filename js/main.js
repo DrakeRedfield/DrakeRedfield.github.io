@@ -4,9 +4,9 @@ const loadFunction = () => {
         color: '#fff',
         shape: 'edge', // "circle", "edge" or "triangle"
         opacity: 1,
-        size: 4,
+        size: 3,
         size_random: true,
-        nb: 40,
+        nb: 20,
         line_linked: {
             enable_auto: true,
             distance: 100,

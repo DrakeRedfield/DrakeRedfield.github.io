@@ -133,7 +133,7 @@ section{
     width: 100%;
 }
 /* about Me */
-.about-me{
+.about-me, .knowledge{
     width: 100%;
     height: 100vh;
     background: #0D203F;
@@ -166,9 +166,17 @@ section{
     margin-top: 2rem;
     margin-bottom: 2rem;
     position: relative;
+    transition: all 0.2s linear;
+}
+.on-hover:hover{
+    transform: scale(1.2);
 }
 .card.full-wd{
     width: 100%;
+    margin: auto;
+}
+.card.medium-wd{
+    width: 75%;
     margin: auto;
 }
 .card .card-header{
@@ -185,16 +193,57 @@ section{
 .card .card-header img{
     width: 50%;
 }
+/* .card:hover .card-header img{
+    animation: shaking-from-cero 1.5s linear infinite;
+    animation-fill-mode: forwards;
+} */
 .card .card-content{
     background: #FFFFFF;
     border-radius: 0px 0px 40px 40px;
-    padding: 10px 20px;
+    padding: 30px 20px;
     font-size: 1.5rem;
 }
 .card .card-content.topic-text{
     color: #217B8E;
     text-align: center;
     font-size: 2rem;
+}
+/* Knowledge */
+.content-technologies, .contact-me{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+.content-technologies img{
+    width: 10%;
+    height: 10%;
+    margin: 2.5%;
+    min-width: 50px;
+    transition: all 0.2s linear;
+}
+.content-technologies img:hover,.contact-me a:hover{
+    transform: scale(1.4);
+}
+/* Contact me */
+.contact-me-card{
+    margin: auto;
+}
+.contact-me-card .card-content{
+    border-radius: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.contact-me a{
+    display: flex;
+    width: 10%;
+    height: 10%;
+    margin: 2.5%;
+    min-width: 50px;
+    transition: all 0.2s linear;
+}
+.contact-me a img{
+    width: 100%;
 }
 /* Content bg animation */
 .bg-animations{
@@ -296,6 +345,23 @@ section{
         transform: rotate( -30deg );
     }
 }
+@keyframes shaking-from-cero {
+    0%{
+        transform: rotate( 0deg );
+    }
+    25%{
+        transform: rotate( -30deg );
+    }
+    50%{
+        transform: rotate( 0deg );
+    }
+    75%{
+        transform: rotate( 30deg );
+    }
+    100%{
+        transform: rotate( 0deg );
+    }
+}
 
 /* Responsive Style */
 @media screen and (max-width: 850px) {
@@ -323,6 +389,10 @@ section{
         width: 48%;
         margin-bottom: 10%;
     }
+    /*Contact me*/
+    .contact-me-card{
+        width: 75%;
+    }
 }
 @media screen and (max-width: 650px){
     /* Set Font Size */
@@ -331,7 +401,9 @@ section{
     }
     /* Set Size Cards */
     .hobbies > .card{
-        width: 100%;
+        width: 75%;
+        margin: auto;
+        margin-bottom: 20px;
     }
     .card.full-wd .card-content{
         text-align: center;
@@ -341,5 +413,11 @@ section{
         width: 50vw;
         height: 50vw;
     }
-    
+    /* Contact me */
+    .contact-me-card{
+        width: 100%;
+    }
+    .card.medium-wd{
+        width: 100%;
+    }    
 }
