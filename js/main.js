@@ -1,7 +1,6 @@
 const updatePercentage = () => {
     //percent.innerHTML = (tl.progress() *100 ).toFixed();
     timeLine.progress();
-    console.log(timeLine.progress());
 };
 
 let timeLine = new TimelineMax({onUpdate: updatePercentage});
@@ -63,7 +62,7 @@ const animationOnScrolling = () => {
     .addTo(ctrlScroll);
 };
 
-const loadFunction = () => {
+const createParticles = () => {
     particlesJS('particles-js', {
         particles: {
         color: '#fff',
@@ -110,6 +109,21 @@ const loadFunction = () => {
         /* Retina Display Support */
         retina_detect: true
     });
+}
+
+const loadFunction = () => {
+    if( navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPad/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)){
+            console.log('Mobile');
+    }else{
+        createParticles();
+    }
+    
     animationOnScrolling();
 }
 
