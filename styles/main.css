@@ -133,6 +133,21 @@ section{
     width: 100%;
 }
 /* about Me */
+.about-me .cover-text,.cover-text-hobbies,.cover-text-home{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(13, 32, 63, 0.5);
+    backdrop-filter: blur(6px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    opacity: 0;
+}
 .about-me, .knowledge{
     width: 100%;
     height: 100vh;
@@ -142,6 +157,11 @@ section{
     display: flex;
     flex-direction: column;
     position: relative;
+}
+.about-me{
+    flex-direction: initial;
+    justify-content: center;
+    align-items: center;
 }
 .about-me .header{
     color:white;
@@ -176,7 +196,7 @@ section{
     margin: auto;
 }
 .card.medium-wd{
-    width: 75%;
+    width: 50%;
     margin: auto;
 }
 .card .card-header{
@@ -376,10 +396,10 @@ section{
         height: 50%;
     }
     /* About me */
-    .about-me{
+    /* .about-me{
         height: fit-content;
         display: block;
-    }
+    } */
     /*Hobbies*/
     .hobbies{
         /* flex-direction: column; */
@@ -401,7 +421,7 @@ section{
     }
     /* Set Size Cards */
     .hobbies > .card{
-        width: 75%;
+        width: 45%;
         margin: auto;
         margin-bottom: 20px;
     }
