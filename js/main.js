@@ -7,11 +7,11 @@ let timeLine = new TimelineMax({onUpdate: updatePercentage});
 let timeLine2 = new TimelineMax();
 let timeLine3 = new TimelineMax();
 let timeLineHome = new TimelineMax();
-// let timeLine = new TimelineMax({onUpdate: updatePercentage});
+
 const ctrlScroll = new ScrollMagic.Controller();
 
 const animationOnScrolling = () => {
-    timeLineHome.from(".cover-text-home", 0.5, {opacity: 1});
+    timeLineHome.from(".cover-text-home", 0.25, {opacity: 1});
 
     timeLine.from(".cover-text", 0.5, {opacity: 1});
     timeLine.from(".card-4", 0.5, {y:100,opacity: 0});

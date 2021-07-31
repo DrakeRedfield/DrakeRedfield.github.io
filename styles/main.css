@@ -205,7 +205,7 @@ section{
     background: rgba(13, 32, 63, 0.5);
     border: 5px solid #FFFFFF;
     backdrop-filter: blur(2px);
-    border-radius: 40px 40px 0px 0px;
+    border-radius: 20px 20px 0px 0px;
     padding: 20px 15px;
     font-size: 2rem;
     color: white;
@@ -219,7 +219,7 @@ section{
 } */
 .card .card-content{
     background: #FFFFFF;
-    border-radius: 0px 0px 40px 40px;
+    border-radius: 0px 0px 20px 20px;
     padding: 30px 20px;
     font-size: 1.5rem;
 }
@@ -250,7 +250,7 @@ section{
     margin: auto;
 }
 .contact-me-card .card-content{
-    border-radius: 30px;
+    border-radius: 20px;
     padding-top: 5px;
     padding-bottom: 5px;
 }
